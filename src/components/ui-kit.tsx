@@ -1,4 +1,5 @@
 import type { ButtonHTMLAttributes, InputHTMLAttributes, ReactNode } from "react";
+import { Slot } from "@radix-ui/react-slot";
 import { cn } from "@/lib/utils";
 
 type Variant = "primary" | "accent" | "outline" | "ghost";
@@ -23,10 +24,12 @@ export function Button({
   variant = "primary",
   size = "md",
   className,
+  asChild,
   ...props
-}: ButtonHTMLAttributes<HTMLButtonElement> & { variant?: Variant; size?: Size }) {
+}: ButtonHTMLAttributes<HTMLButtonElement> & { variant?: Variant; size?: Size; asChild?: boolean }) {
+  const Comp = asChild ? Slot : "button";
   return (
-    <button
+    <Comp
       className={cn(
         "inline-flex items-center justify-center gap-2 rounded-md font-medium transition-[background,opacity,transform,filter] duration-200 active:scale-[0.98] disabled:cursor-not-allowed",
         variants[variant],
