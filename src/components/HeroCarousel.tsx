@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { banners } from "@/data/catalog";
 import { cn } from "@/lib/utils";
+import bannerAsset from "@/assets/tys-mobile-legends-banner.png.asset.json";
 
 export function HeroCarousel() {
   const [index, setIndex] = useState(0);
@@ -39,34 +40,24 @@ export function HeroCarousel() {
             className="relative w-full shrink-0"
             aria-hidden={banners[index]?.id !== b.id}
           >
-            <div
-              className="relative flex min-h-[19rem] flex-col justify-end p-6 md:min-h-[22rem] md:p-12"
-              style={{ backgroundImage: `linear-gradient(115deg, ${b.from}, ${b.to})` }}
-            >
+            <div className="relative min-h-[15rem] overflow-hidden sm:aspect-[1983/793] sm:min-h-0">
+              <img
+                src={bannerAsset.url}
+                alt="Mobile Legends diamond top-up promotion"
+                className="absolute inset-0 h-full w-full object-cover object-center"
+                loading={b.id === banners[0]?.id ? "eager" : "lazy"}
+              />
               <div
                 className="pointer-events-none absolute inset-0"
-                style={{
-                  background:
-                    "linear-gradient(90deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.18) 55%, rgba(0,0,0,0) 100%)",
-                }}
+                aria-hidden
               />
-              <div className="relative max-w-xl">
-                <p className="text-xs font-medium uppercase tracking-[0.18em] text-white/70">
-                  {b.eyebrow}
-                </p>
-                <h2 className="mt-3 text-2xl font-semibold leading-tight tracking-tight text-white md:text-4xl">
-                  {b.title}
-                </h2>
-                <p className="mt-2 max-w-md text-sm text-white/80">{b.text}</p>
-                <Link
-                  to="/product/$slug"
-                  params={{ slug: b.slug }}
-                  tabIndex={banners[index]?.id === b.id ? 0 : -1}
-                  className="mt-6 inline-flex h-11 items-center rounded-md bg-white/95 px-5 text-sm font-medium text-neutral-900 transition-transform duration-200 hover:scale-[1.02]"
-                >
-                  {b.cta}
-                </Link>
-              </div>
+              <Link
+                to="/product/$slug"
+                params={{ slug: b.slug }}
+                tabIndex={banners[index]?.id === b.id ? 0 : -1}
+                aria-label={`${b.cta}: ${b.title}`}
+                className="absolute inset-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-inset"
+              />
             </div>
           </article>
         ))}

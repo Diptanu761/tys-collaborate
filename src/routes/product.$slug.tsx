@@ -66,7 +66,7 @@ function ProductPage() {
       <div className="mt-6 grid gap-8 lg:grid-cols-3">
         <div className="lg:col-span-2 space-y-8">
           <div className="flex flex-col gap-6 sm:flex-row">
-            <GameArt {...product.art} size="lg" className="h-32 w-32 shrink-0 rounded-xl" />
+            <GameArt {...product.art} alt={`${product.name} artwork`} size="lg" className="h-32 w-32 shrink-0 rounded-xl" />
             <div>
               <div className="flex flex-wrap items-center gap-2">
                 {product.badge && <Badge tone="accent">{product.badge}</Badge>}
@@ -189,7 +189,7 @@ function ProductPage() {
                     params={{ slug: p.slug }}
                     className="flex items-center gap-3 rounded-lg border border-border bg-card p-3 transition-colors hover:border-border-strong"
                   >
-                    <GameArt {...p.art} size="sm" className="h-12 w-12 shrink-0" />
+                    <GameArt {...p.art} alt={`${p.name} artwork`} size="sm" className="h-12 w-12 shrink-0" />
                     <div className="min-w-0">
                       <p className="truncate text-sm font-medium">{p.name}</p>
                       <p className="text-xs text-muted-foreground">From {inr(p.from)}</p>

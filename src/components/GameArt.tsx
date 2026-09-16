@@ -4,12 +4,18 @@ export function GameArt({
   from,
   to,
   initials,
+  image,
+  alt = "",
+  fit = "cover",
   className,
   size = "md",
 }: {
   from: string;
   to: string;
   initials: string;
+  image?: string;
+  alt?: string;
+  fit?: "cover" | "contain";
   className?: string;
   size?: "sm" | "md" | "lg";
 }) {
@@ -23,6 +29,18 @@ export function GameArt({
       )}
       style={{ backgroundImage: `linear-gradient(140deg, ${from}, ${to})` }}
     >
+      {image ? (
+        <img
+          src={image}
+          alt={alt}
+          loading="lazy"
+          className={cn(
+            "absolute inset-0 h-full w-full",
+            fit === "contain" ? "object-contain p-[12%]" : "object-cover",
+          )}
+        />
+      ) : (
+        <>
       <span
         className="absolute -right-4 -top-6 h-16 w-16 rounded-full"
         style={{ background: "rgba(255,255,255,0.12)" }}
@@ -34,6 +52,8 @@ export function GameArt({
       <span className={cn("relative font-semibold tracking-wider text-white/90", text)}>
         {initials}
       </span>
+        </>
+      )}
     </div>
   );
 }
