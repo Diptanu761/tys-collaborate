@@ -16,6 +16,7 @@ export function ProductCard({ product, wide = false }: { product: Product; wide?
     >
       <GameArt
         {...product.art}
+        alt={`${product.name} artwork`}
         size={wide ? "md" : "lg"}
         className={cn(wide ? "h-16 w-16 shrink-0" : "aspect-[4/3] w-full")}
       />
