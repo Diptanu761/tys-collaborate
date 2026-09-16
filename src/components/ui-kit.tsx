@@ -102,13 +102,15 @@ export function SectionHeading({
   title,
   subtitle,
   action,
+  className,
 }: {
   title: string;
   subtitle?: string;
   action?: ReactNode;
+  className?: string;
 }) {
   return (
-    <div className="mb-6 flex items-end justify-between gap-4">
+    <div className={cn("mb-6 flex items-end justify-between gap-4", className)}>
       <div>
         <h2 className="text-xl font-semibold tracking-tight md:text-2xl">{title}</h2>
         {subtitle && <p className="mt-1 text-sm text-muted-foreground">{subtitle}</p>}
