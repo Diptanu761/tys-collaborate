@@ -41,7 +41,7 @@ export function ProductCard({ product, wide = false }: { product: Product; wide?
             From <span className="text-foreground">{inr(product.from)}</span>
           </span>
           <span className="inline-flex items-center gap-1 text-[0.7rem] text-muted-foreground">
-            <Zap className="h-3 w-3" aria-hidden /> {product.delivery.split("·")[0].trim()}
+            <Zap className="h-3 w-3" aria-hidden /> {product.delivery.split("·")[0]?.trim()}
           </span>
         </div>
       </div>
