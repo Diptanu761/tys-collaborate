@@ -16,16 +16,20 @@ export const Route = createFileRoute("/product/$slug")({
     return product;
   },
   component: ProductPage,
-  head: ({ loaderData }) => ({
-    meta: [
-      { title: `${loaderData.name} — TYS GLOBAL` },
-      { name: "description", content: loaderData.short },
-      { property: "og:title", content: `${loaderData.name} — TYS GLOBAL` },
-      { property: "og:description", content: loaderData.short },
-      { property: "og:type", content: "product" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: ({ loaderData }) => {
+    const name = loaderData?.name ?? "Product";
+    const short = loaderData?.short ?? "Top up your game instantly with TYS GLOBAL.";
+    return {
+      meta: [
+        { title: `${name} — TYS GLOBAL` },
+        { name: "description", content: short },
+        { property: "og:title", content: `${name} — TYS GLOBAL` },
+        { property: "og:description", content: short },
+        { property: "og:type", content: "product" },
+        { name: "twitter:card", content: "summary_large_image" },
+      ],
+    };
+  },
 });
 
 const faq = [
