@@ -44,7 +44,7 @@ export function Footer() {
           <ul className="mt-4 space-y-2.5 text-sm">
             {shop.map((s) => (
               <li key={s}>
-                <Link to="/top-up" className="text-muted-foreground transition-colors hover:text-foreground">
+                <Link to="/top-up" search={{ category: "All", region: "All regions", q: "" }} className="text-muted-foreground transition-colors hover:text-foreground">
                   {s}
                 </Link>
               </li>

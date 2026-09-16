@@ -35,7 +35,7 @@ function HomePage() {
           title="Popular top-ups"
           subtitle="Best-selling games and vouchers this week"
           action={
-            <Link to="/top-up" className="inline-flex items-center gap-1 text-sm font-medium text-accent hover:underline">
+            <Link to="/top-up" search={{ category: "All", region: "All regions", q: "" }} className="inline-flex items-center gap-1 text-sm font-medium text-accent hover:underline">
               View all <ArrowRight className="h-4 w-4" aria-hidden />
             </Link>
           }
@@ -57,7 +57,7 @@ function HomePage() {
             <Link
               key={category}
               to="/top-up"
-              search={{ category }}
+              search={{ category, region: "All regions", q: "" }}
               className="group flex items-center justify-between rounded-lg border border-border bg-card p-5 shadow-soft transition-all hover:-translate-y-0.5 hover:border-border-strong hover:shadow-lift"
             >
               <span className="text-sm font-medium">{category}</span>
@@ -92,7 +92,7 @@ function HomePage() {
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
               <Button asChild>
-                <Link to="/top-up">Shop top-ups</Link>
+                <Link to="/top-up" search={{ category: "All", region: "All regions", q: "" }}>Shop top-ups</Link>
               </Button>
               <Button variant="outline" asChild>
                 <Link to="/how-it-works">How it works</Link>

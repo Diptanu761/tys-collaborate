@@ -11,9 +11,9 @@ import { products, regions, categories } from "@/data/catalog";
 export const Route = createFileRoute("/top-up")({
   component: TopUpPage,
   validateSearch: (search: Record<string, unknown>) => ({
-    category: typeof search.category === "string" && categories.includes(search.category) ? search.category : "All",
-    region: typeof search.region === "string" ? search.region : "All regions",
-    q: typeof search.q === "string" ? search.q : "",
+    category: typeof search["category"] === "string" && categories.includes(search["category"] as string) ? (search["category"] as string) : "All",
+    region: typeof search["region"] === "string" ? (search["region"] as string) : "All regions",
+    q: typeof search["q"] === "string" ? (search["q"] as string) : "",
   }),
   head: () => ({
     meta: [

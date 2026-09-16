@@ -96,7 +96,7 @@ function AboutPage() {
         <p className="mt-2 text-sm text-muted-foreground">Browse popular games and vouchers at reseller pricing.</p>
         <div className="mt-6 flex justify-center gap-3">
           <Button asChild>
-            <Link to="/top-up">Shop top-ups</Link>
+            <Link to="/top-up" search={{ category: "All", region: "All regions", q: "" }}>Shop top-ups</Link>
           </Button>
           <Button variant="outline" asChild>
             <Link to="/contact">Get in touch</Link>
