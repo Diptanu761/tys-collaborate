@@ -1,3 +1,5 @@
+import { artwork } from "@/data/artwork";
+
 export type Category =
   | "Popular Games"
   | "Mobile Legends"
@@ -42,7 +44,7 @@ export type Product = {
   reviews: number;
   delivery: string;
   needsZoneId: boolean;
-  art: { from: string; to: string; initials: string };
+  art: { from: string; to: string; initials: string; image?: string; fit?: "cover" | "contain" };
   denominations: Denomination[];
   popular?: boolean;
 };
@@ -71,7 +73,7 @@ export const products: Product[] = [
     reviews: 2841,
     delivery: "Instant · under 2 min",
     needsZoneId: true,
-    art: { from: "#1f4fd8", to: "#0ea5b7", initials: "ML" },
+    art: { from: "#1f4fd8", to: "#0ea5b7", initials: "ML", image: artwork.mobileLegends },
     popular: true,
     denominations: dia([
       ["86 Diamonds", 79],
@@ -98,7 +100,7 @@ export const products: Product[] = [
     reviews: 1920,
     delivery: "Instant · under 5 min",
     needsZoneId: false,
-    art: { from: "#c78b1f", to: "#7a4c12", initials: "UC" },
+    art: { from: "#c78b1f", to: "#7a4c12", initials: "UC", image: artwork.pubgMobile },
     popular: true,
     denominations: dia([
       ["60 UC", 75],
@@ -124,7 +126,7 @@ export const products: Product[] = [
     reviews: 1533,
     delivery: "Instant",
     needsZoneId: false,
-    art: { from: "#e0653a", to: "#a1231f", initials: "FF" },
+    art: { from: "#e0653a", to: "#a1231f", initials: "FF", image: artwork.freeFire },
     popular: true,
     denominations: dia([
       ["25 Diamonds", 40],
@@ -149,7 +151,7 @@ export const products: Product[] = [
     reviews: 874,
     delivery: "Under 10 min",
     needsZoneId: false,
-    art: { from: "#e2455a", to: "#7f1d2c", initials: "VP" },
+    art: { from: "#e2455a", to: "#7f1d2c", initials: "VP", image: artwork.valorant, fit: "contain" },
     popular: true,
     denominations: dia([
       ["475 VP", 399],
@@ -174,7 +176,7 @@ export const products: Product[] = [
     reviews: 412,
     delivery: "Instant",
     needsZoneId: false,
-    art: { from: "#2a9dc9", to: "#1b4f7a", initials: "WW" },
+    art: { from: "#2a9dc9", to: "#1b4f7a", initials: "WW", image: artwork.wutheringWaves },
     denominations: dia([
       ["60 Lunite", 99],
       ["300 Lunite", 449, "+30 bonus"],
@@ -197,7 +199,7 @@ export const products: Product[] = [
     reviews: 1105,
     delivery: "Instant",
     needsZoneId: false,
-    art: { from: "#4c6fd6", to: "#8b5cc8", initials: "GI" },
+    art: { from: "#4c6fd6", to: "#8b5cc8", initials: "GI", image: artwork.genshinImpact },
     popular: true,
     denominations: dia([
       ["60 Crystals", 85],
@@ -221,7 +223,7 @@ export const products: Product[] = [
     reviews: 238,
     delivery: "Under 5 min",
     needsZoneId: false,
-    art: { from: "#7a8b9c", to: "#37424e", initials: "BS" },
+    art: { from: "#7a8b9c", to: "#37424e", initials: "BS", image: artwork.bloodStrike },
     denominations: dia([
       ["100 Gold", 69],
       ["310 Gold", 199],
@@ -243,7 +245,7 @@ export const products: Product[] = [
     reviews: 690,
     delivery: "Under 15 min",
     needsZoneId: false,
-    art: { from: "#d94a4a", to: "#6b1f1f", initials: "RB" },
+    art: { from: "#d94a4a", to: "#6b1f1f", initials: "RB", image: artwork.roblox, fit: "contain" },
     denominations: dia([
       ["80 Robux", 99],
       ["400 Robux", 449],
@@ -265,7 +267,7 @@ export const products: Product[] = [
     reviews: 1320,
     delivery: "Instant code",
     needsZoneId: false,
-    art: { from: "#3a6a94", to: "#16202c", initials: "ST" },
+    art: { from: "#3a6a94", to: "#16202c", initials: "ST", image: artwork.steam, fit: "contain" },
     denominations: dia([
       ["₹250 Wallet", 259],
       ["₹500 Wallet", 515],
@@ -287,7 +289,7 @@ export const products: Product[] = [
     reviews: 96,
     delivery: "Under 30 min",
     needsZoneId: false,
-    art: { from: "#c2478f", to: "#6b2d8f", initials: "IG" },
+    art: { from: "#c2478f", to: "#6b2d8f", initials: "IG", image: artwork.instagram, fit: "contain" },
     denominations: dia([
       ["₹200 Credit", 199],
       ["₹500 Credit", 489],
@@ -308,7 +310,7 @@ export const products: Product[] = [
     reviews: 305,
     delivery: "Instant code",
     needsZoneId: false,
-    art: { from: "#c93636", to: "#3a1111", initials: "NF" },
+    art: { from: "#c93636", to: "#3a1111", initials: "NF", image: artwork.netflix, fit: "contain" },
     denominations: dia([
       ["₹500 Card", 509],
       ["₹1000 Card", 1015],
@@ -329,7 +331,7 @@ export const products: Product[] = [
     reviews: 158,
     delivery: "Under 10 min",
     needsZoneId: false,
-    art: { from: "#5865f2", to: "#2b2f7a", initials: "DC" },
+    art: { from: "#5865f2", to: "#2b2f7a", initials: "DC", image: artwork.discord, fit: "contain" },
     denominations: dia([
       ["Nitro Basic · 1 month", 279],
       ["Nitro · 1 month", 849],
