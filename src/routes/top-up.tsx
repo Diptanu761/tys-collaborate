@@ -125,7 +125,7 @@ function TopUpPage() {
               }
             />
           ) : (
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid max-w-[18rem] gap-4 sm:max-w-none sm:grid-cols-2 xl:grid-cols-3">
               {filtered.map((product) => (
                 <ProductCard key={product.slug} product={product} />
               ))}

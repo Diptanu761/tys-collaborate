@@ -26,7 +26,7 @@ function HomePage() {
 
   return (
     <div className="space-y-16 pb-16">
-      <section className="container-page pt-6">
+      <section className="container-page pt-6 md:max-w-6xl">
         <HeroCarousel />
       </section>
 
@@ -40,7 +40,7 @@ function HomePage() {
             </Link>
           }
         />
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto grid max-w-[18rem] gap-4 sm:max-w-[37rem] sm:grid-cols-2 lg:max-w-5xl lg:grid-cols-4">
           {popular.slice(0, 4).map((product) => (
             <ProductCard key={product.slug} product={product} />
           ))}
