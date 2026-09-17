@@ -46,16 +46,16 @@
   --radius: 0.875rem;
   --background: oklch(0.965 0.018 205);
   --foreground: oklch(0.19 0.025 225);
-  --card: oklch(1 0 0 / 0.58);
+  --card: oklch(0.9 0 0 / 0.52);
   --card-foreground: oklch(0.19 0.012 255);
-  --elevated: oklch(0.98 0.012 205 / 0.68);
-  --popover: oklch(1 0 0 / 0.82);
+  --elevated: oklch(0.88 0.012 205 / 0.61);
+  --popover: oklch(0.9 0 0 / 0.74);
   --popover-foreground: oklch(0.19 0.012 255);
   --primary: oklch(0.57 0.14 208);
   --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.955 0.004 250);
+  --secondary: oklch(0.855 0.004 250 / 0.62);
   --secondary-foreground: oklch(0.25 0.012 255);
-  --muted: oklch(1 0 0 / 0.38);
+  --muted: oklch(0.9 0 0 / 0.34);
   --muted-foreground: oklch(0.43 0.03 225);
   --accent: oklch(0.65 0.14 205);
   --accent-foreground: oklch(0.14 0.025 225);
@@ -67,9 +67,9 @@
   --warning: oklch(0.75 0.14 75);
   --destructive: oklch(0.58 0.2 22);
   --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(1 0 0 / 0.5);
-  --border-strong: oklch(1 0 0 / 0.78);
-  --input: oklch(1 0 0 / 0.62);
+  --border: oklch(0.9 0 0 / 0.45);
+  --border-strong: oklch(0.9 0 0 / 0.70);
+  --input: oklch(0.9 0 0 / 0.56);
   --ring: oklch(0.6 0.13 226);
   --shadow-soft: 0 10px 30px -18px oklch(0.18 0.05 220 / 0.35), inset 0 1px 0 var(--glass-highlight);
   --shadow-lift: 0 20px 45px -20px oklch(0.35 0.12 210 / 0.5), 0 8px 22px -14px oklch(0.68 0.18 55 / 0.4), inset 0 1px 0 var(--glass-highlight);
@@ -78,16 +78,16 @@
 .dark {
   --background: oklch(0.14 0.025 235);
   --foreground: oklch(0.955 0.003 250);
-  --card: oklch(0.22 0.035 230 / 0.58);
+  --card: oklch(0.32 0.035 230 / 0.52);
   --card-foreground: oklch(0.955 0.003 250);
-  --elevated: oklch(0.2 0.035 230 / 0.7);
-  --popover: oklch(0.19 0.03 230 / 0.9);
+  --elevated: oklch(0.3 0.035 230 / 0.63);
+  --popover: oklch(0.29 0.03 230 / 0.81);
   --popover-foreground: oklch(0.955 0.003 250);
   --primary: oklch(0.72 0.15 202);
   --primary-foreground: oklch(0.14 0.025 230);
-  --secondary: oklch(0.255 0.01 255);
+  --secondary: oklch(0.355 0.01 255 / 0.62);
   --secondary-foreground: oklch(0.95 0.003 250);
-  --muted: oklch(1 0 0 / 0.09);
+  --muted: oklch(0.9 0 0 / 0.08);
   --muted-foreground: oklch(0.7 0.012 255);
   --accent: oklch(0.76 0.15 199);
   --accent-foreground: oklch(0.17 0.01 255);
@@ -99,9 +99,9 @@
   --warning: oklch(0.8 0.14 75);
   --destructive: oklch(0.65 0.18 22);
   --destructive-foreground: oklch(0.15 0.01 255);
-  --border: oklch(1 0 0 / 15%);
-  --border-strong: oklch(1 0 0 / 28%);
-  --input: oklch(1 0 0 / 18%);
+  --border: oklch(0.9 0 0 / 13.5%);
+  --border-strong: oklch(0.9 0 0 / 25.2%);
+  --input: oklch(0.9 0 0 / 16.2%);
   --ring: oklch(0.72 0.13 218);
   --shadow-soft: 0 12px 32px -18px oklch(0 0 0 / 0.7), inset 0 1px 0 var(--glass-highlight);
   --shadow-lift: 0 24px 54px -22px oklch(0 0 0 / 0.8), 0 8px 26px -16px oklch(0.75 0.18 57 / 0.42), inset 0 1px 0 var(--glass-highlight);
@@ -137,13 +137,13 @@
     background-image: url("./assets/glass-gradient-texture.jpg");
     background-size: cover;
     background-position: center;
-    filter: blur(20px) saturate(115%) brightness(1.65);
+    filter: blur(18px) saturate(115%) brightness(1.65);
     transform: scale(1.04);
     transition: filter 250ms ease;
   }
 
   .dark body::before {
-    filter: blur(20px) saturate(120%) brightness(0.62);
+    filter: blur(18px) saturate(120%) brightness(0.62);
   }
 
   :focus-visible {
@@ -155,7 +155,7 @@
   .bg-card\/50,
   .bg-card\/70,
   .bg-card\/90 {
-    backdrop-filter: blur(14px) saturate(145%);
+    backdrop-filter: blur(13px) saturate(145%);
   }
 }
 
@@ -181,21 +181,21 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(16px) saturate(145%);
+  backdrop-filter: blur(14px) saturate(145%);
 }
 
 @utility glass-panel {
   background-color: var(--color-card);
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(16px) saturate(150%);
+  backdrop-filter: blur(14px) saturate(150%);
 }
 
 @utility glass-control {
   background-color: color-mix(in oklab, var(--color-card) 78%, transparent);
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(12px) saturate(145%);
+  backdrop-filter: blur(11px) saturate(145%);
 }
 
 @media (prefers-reduced-motion: reduce) {
