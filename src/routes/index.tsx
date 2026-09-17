@@ -26,7 +26,7 @@ function HomePage() {
 
   return (
     <div className="space-y-16 pb-16">
-      <section className="container-page pt-6 md:max-w-6xl">
+      <section className="container-page pt-6 md:max-w-5xl">
         <HeroCarousel />
       </section>
 
