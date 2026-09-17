@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { ArrowRight, Smartphone } from "lucide-react";
-import { Button, Field } from "@/components/ui-kit";
+import { Button } from "@/components/ui-kit";
 import { OtpStep } from "@/components/OtpStep";
 
 export const Route = createFileRoute("/login")({
