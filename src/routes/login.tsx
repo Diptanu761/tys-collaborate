@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { ArrowLeft, ArrowRight, Smartphone } from "lucide-react";
+import { ArrowRight, Smartphone } from "lucide-react";
 import { Button, Field } from "@/components/ui-kit";
 import { OtpStep } from "@/components/OtpStep";
 
@@ -9,9 +9,9 @@ export const Route = createFileRoute("/login")({
   head: () => ({
     meta: [
       { title: "Log In — TYS GLOBAL" },
-      { name: "description", content: "Sign in to your TYS GLOBAL account to view orders and saved payment methods." },
+      { name: "description", content: "Sign in to your TYS GLOBAL account with your mobile number and a one-time code." },
       { property: "og:title", content: "Log In — TYS GLOBAL" },
-      { property: "og:description", content: "Sign in to your TYS GLOBAL account to view orders and saved payment methods." },
+      { property: "og:description", content: "Sign in to your TYS GLOBAL account with your mobile number and a one-time code." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],
@@ -19,72 +19,75 @@ export const Route = createFileRoute("/login")({
 });
 
 function LoginPage() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [step, setStep] = useState<"phone" | "otp">("phone");
+  const [phone, setPhone] = useState("");
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const sendOtp = (e: React.FormEvent) => {
     e.preventDefault();
+    const digits = phone.replace(/\D/g, "");
+    if (digits.length !== 10) {
+      setError("Enter a valid 10-digit mobile number.");
+      return;
+    }
+    setError("");
     setLoading(true);
-    setTimeout(() => setLoading(false), 1200);
+    setTimeout(() => {
+      setLoading(false);
+      setStep("otp");
+    }, 900);
   };
 
   return (
     <div className="container-page flex flex-1 items-center justify-center py-12">
       <div className="w-full max-w-md rounded-2xl border border-border bg-card p-8 shadow-soft">
-        <div className="text-center">
-          <h1 className="text-2xl font-semibold tracking-tight">Welcome back</h1>
-          <p className="mt-2 text-sm text-muted-foreground">Sign in to your TYS GLOBAL account</p>
-        </div>
-
-        <form onSubmit={handleSubmit} className="mt-8 space-y-4">
-          <Field
-            label="Email"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="you@example.com"
-            required
-          />
-          <Field
-            label="Password"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="••••••••"
-            required
-          />
-          <div className="flex items-center justify-between">
-            <label className="flex items-center gap-2 text-xs text-muted-foreground">
-              <input type="checkbox" className="h-4 w-4 accent-accent" /> Remember me
-            </label>
-            <Link to="/" className="text-xs font-medium text-accent hover:underline">
-              Forgot password?
-            </Link>
-          </div>
-          <Button type="submit" size="lg" className="w-full" disabled={loading}>
-            {loading ? "Signing in..." : "Sign in"}
-          </Button>
-        </form>
-
-        <div className="mt-6">
-          <div className="relative">
-            <div className="absolute inset-0 flex items-center">
-              <span className="w-full border-t border-border" />
+        {step === "phone" ? (
+          <>
+            <div className="text-center">
+              <h1 className="text-2xl font-semibold tracking-tight">Welcome back</h1>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Enter your mobile number to sign in with a one-time code
+              </p>
             </div>
-            <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-card px-2 text-muted-foreground">Or continue with</span>
-            </div>
-          </div>
-          <div className="mt-4 grid grid-cols-2 gap-3">
-            <Button variant="outline" className="w-full" type="button">
-              <Mail className="h-4 w-4" aria-hidden /> Google
-            </Button>
-            <Button variant="outline" className="w-full" type="button">
-              <Github className="h-4 w-4" aria-hidden /> GitHub
-            </Button>
-          </div>
-        </div>
+
+            <form onSubmit={sendOtp} className="mt-8 space-y-4">
+              <div className="space-y-1.5">
+                <label htmlFor="phone" className="block text-sm font-medium text-foreground">
+                  Mobile number
+                </label>
+                <div className="flex items-center gap-2 rounded-md border border-input bg-card px-3 focus-within:border-accent">
+                  <Smartphone className="h-4 w-4 text-muted-foreground" aria-hidden />
+                  <span className="text-sm text-muted-foreground">+91</span>
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    inputMode="numeric"
+                    autoComplete="tel"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value.replace(/\D/g, "").slice(0, 10))}
+                    placeholder="98765 43210"
+                    aria-invalid={!!error}
+                    className="h-11 w-full bg-transparent text-sm text-foreground placeholder:text-muted-foreground/70 focus:outline-none"
+                    required
+                  />
+                </div>
+                {error ? (
+                  <p className="text-xs text-destructive">{error}</p>
+                ) : (
+                  <p className="text-xs text-muted-foreground">We'll text you a 6-digit verification code.</p>
+                )}
+              </div>
+
+              <Button type="submit" size="lg" className="w-full" disabled={loading}>
+                {loading ? "Sending code..." : "Send OTP"}
+              </Button>
+            </form>
+          </>
+        ) : (
+          <OtpStep phone={`+91 ${phone}`} onBack={() => setStep("phone")} ctaLabel="Verify & sign in" />
+        )}
 
         <p className="mt-8 text-center text-sm text-muted-foreground">
           Don't have an account?{" "}
