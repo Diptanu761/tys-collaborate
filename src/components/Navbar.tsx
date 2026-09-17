@@ -73,7 +73,12 @@ export function Navbar() {
               {lang}
             </button>
 
-            <button onClick={toggle} aria-label="Toggle colour theme" className={iconBtn}>
+            <button
+              onClick={toggle}
+              aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
+              title={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
+              className={iconBtn}
+            >
               {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
             </button>
 
