@@ -137,13 +137,13 @@
     background-image: url("./assets/glass-gradient-texture.jpg");
     background-size: cover;
     background-position: center;
-    filter: blur(20px) saturate(115%) brightness(1.65);
+    filter: blur(18px) saturate(115%) brightness(1.65);
     transform: scale(1.04);
     transition: filter 250ms ease;
   }
 
   .dark body::before {
-    filter: blur(20px) saturate(120%) brightness(0.62);
+    filter: blur(18px) saturate(120%) brightness(0.62);
   }
 
   :focus-visible {
