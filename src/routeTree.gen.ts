@@ -16,7 +16,9 @@ import { Route as HowItWorksRouteImport } from './routes/how-it-works'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as SignupRouteImport } from './routes/signup'
 import { Route as TopUpRouteImport } from './routes/top-up'
+import { Route as LoginMobileRouteImport } from './routes/login.mobile'
 import { Route as ProductSlugRouteImport } from './routes/product.$slug'
+import { Route as SignupMobileRouteImport } from './routes/signup.mobile'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -53,10 +55,20 @@ const TopUpRoute = TopUpRouteImport.update({
   path: '/top-up',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LoginMobileRoute = LoginMobileRouteImport.update({
+  id: '/mobile',
+  path: '/mobile',
+  getParentRoute: () => LoginRoute,
+} as any)
 const ProductSlugRoute = ProductSlugRouteImport.update({
   id: '/product/$slug',
   path: '/product/$slug',
   getParentRoute: () => rootRouteImport,
+} as any)
+const SignupMobileRoute = SignupMobileRouteImport.update({
+  id: '/mobile',
+  path: '/mobile',
+  getParentRoute: () => SignupRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -64,20 +76,24 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/how-it-works': typeof HowItWorksRoute
-  '/login': typeof LoginRoute
-  '/signup': typeof SignupRoute
+  '/login': typeof LoginRouteWithChildren
+  '/signup': typeof SignupRouteWithChildren
   '/top-up': typeof TopUpRoute
+  '/login/mobile': typeof LoginMobileRoute
   '/product/$slug': typeof ProductSlugRoute
+  '/signup/mobile': typeof SignupMobileRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/how-it-works': typeof HowItWorksRoute
-  '/login': typeof LoginRoute
-  '/signup': typeof SignupRoute
+  '/login': typeof LoginRouteWithChildren
+  '/signup': typeof SignupRouteWithChildren
   '/top-up': typeof TopUpRoute
+  '/login/mobile': typeof LoginMobileRoute
   '/product/$slug': typeof ProductSlugRoute
+  '/signup/mobile': typeof SignupMobileRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -85,10 +101,12 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/how-it-works': typeof HowItWorksRoute
-  '/login': typeof LoginRoute
-  '/signup': typeof SignupRoute
+  '/login': typeof LoginRouteWithChildren
+  '/signup': typeof SignupRouteWithChildren
   '/top-up': typeof TopUpRoute
+  '/login/mobile': typeof LoginMobileRoute
   '/product/$slug': typeof ProductSlugRoute
+  '/signup/mobile': typeof SignupMobileRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -100,7 +118,9 @@ export interface FileRouteTypes {
     | '/login'
     | '/signup'
     | '/top-up'
+    | '/login/mobile'
     | '/product/$slug'
+    | '/signup/mobile'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -110,7 +130,9 @@ export interface FileRouteTypes {
     | '/login'
     | '/signup'
     | '/top-up'
+    | '/login/mobile'
     | '/product/$slug'
+    | '/signup/mobile'
   id:
     | '__root__'
     | '/'
@@ -120,7 +142,9 @@ export interface FileRouteTypes {
     | '/login'
     | '/signup'
     | '/top-up'
+    | '/login/mobile'
     | '/product/$slug'
+    | '/signup/mobile'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -128,8 +152,8 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   HowItWorksRoute: typeof HowItWorksRoute
-  LoginRoute: typeof LoginRoute
-  SignupRoute: typeof SignupRoute
+  LoginRoute: typeof LoginRouteWithChildren
+  SignupRoute: typeof SignupRouteWithChildren
   TopUpRoute: typeof TopUpRoute
   ProductSlugRoute: typeof ProductSlugRoute
 }
@@ -185,6 +209,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TopUpRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/login/mobile': {
+      id: '/login/mobile'
+      path: '/mobile'
+      fullPath: '/login/mobile'
+      preLoaderRoute: typeof LoginMobileRouteImport
+      parentRoute: typeof LoginRoute
+    }
     '/product/$slug': {
       id: '/product/$slug'
       path: '/product/$slug'
@@ -192,16 +223,44 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProductSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/signup/mobile': {
+      id: '/signup/mobile'
+      path: '/mobile'
+      fullPath: '/signup/mobile'
+      preLoaderRoute: typeof SignupMobileRouteImport
+      parentRoute: typeof SignupRoute
+    }
   }
 }
+
+interface LoginRouteChildren {
+  LoginMobileRoute: typeof LoginMobileRoute
+}
+
+const LoginRouteChildren: LoginRouteChildren = {
+  LoginMobileRoute: LoginMobileRoute,
+}
+
+const LoginRouteWithChildren = LoginRoute._addFileChildren(LoginRouteChildren)
+
+interface SignupRouteChildren {
+  SignupMobileRoute: typeof SignupMobileRoute
+}
+
+const SignupRouteChildren: SignupRouteChildren = {
+  SignupMobileRoute: SignupMobileRoute,
+}
+
+const SignupRouteWithChildren =
+  SignupRoute._addFileChildren(SignupRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
   HowItWorksRoute: HowItWorksRoute,
-  LoginRoute: LoginRoute,
-  SignupRoute: SignupRoute,
+  LoginRoute: LoginRouteWithChildren,
+  SignupRoute: SignupRouteWithChildren,
   TopUpRoute: TopUpRoute,
   ProductSlugRoute: ProductSlugRoute,
 }
