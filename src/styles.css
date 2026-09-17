@@ -15,45 +15,31 @@
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
-
   --color-elevated: var(--elevated);
-
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
-
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
-
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
-
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
-
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent-soft: var(--accent-soft);
-
   --color-glass-highlight: var(--glass-highlight);
-
   --color-warm: var(--warm);
   --color-warm-soft: var(--warm-soft);
-
   --color-success: var(--success);
   --color-warning: var(--warning);
-
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
-
   --color-border: var(--border);
   --color-border-strong: var(--border-strong);
-
   --color-input: var(--input);
   --color-ring: var(--ring);
-
   --shadow-soft: var(--shadow-soft);
   --shadow-lift: var(--shadow-lift);
 }
@@ -69,21 +55,22 @@
   --background: oklch(0.965 0.018 205);
   --foreground: oklch(0.19 0.025 225);
 
-  --card: oklch(0.9 0 0 / 0.52);
-  --card-foreground: oklch(0.19 0.012 255);
+  /* Light surfaces */
+  --card: oklch(0.99 0.006 210 / 0.78);
+  --card-foreground: oklch(0.20 0.018 225);
 
-  --elevated: oklch(0.88 0.012 205 / 0.61);
+  --elevated: oklch(0.985 0.008 210 / 0.88);
 
-  --popover: oklch(0.9 0 0 / 0.74);
+  --popover: oklch(0.99 0.004 210 / 0.96);
   --popover-foreground: oklch(0.19 0.012 255);
 
   --primary: oklch(0.57 0.14 208);
   --primary-foreground: oklch(0.99 0 0);
 
-  --secondary: oklch(0.855 0.004 250 / 0.62);
+  --secondary: oklch(0.94 0.012 215);
   --secondary-foreground: oklch(0.25 0.012 255);
 
-  --muted: oklch(0.9 0 0 / 0.34);
+  --muted: oklch(0.92 0.012 210 / 0.7);
   --muted-foreground: oklch(0.43 0.03 225);
 
   --accent: oklch(0.65 0.14 205);
@@ -94,7 +81,7 @@
   --warm: oklch(0.72 0.18 56);
   --warm-soft: oklch(0.9 0.08 63 / 0.5);
 
-  --glass-highlight: oklch(1 0 0 / 0.82);
+  --glass-highlight: oklch(1 0 0 / 0.72);
 
   --success: oklch(0.62 0.13 158);
   --warning: oklch(0.75 0.14 75);
@@ -102,35 +89,32 @@
   --destructive: oklch(0.58 0.2 22);
   --destructive-foreground: oklch(0.99 0 0);
 
-  --border: oklch(0.9 0 0 / 0.45);
-  --border-strong: oklch(0.9 0 0 / 0.70);
+  --border: oklch(0.35 0.025 220 / 0.12);
+  --border-strong: oklch(0.35 0.025 220 / 0.20);
 
-  --input: oklch(0.9 0 0 / 0.56);
+  --input: oklch(0.4 0.02 220 / 0.12);
 
   --ring: oklch(0.6 0.13 226);
 
   --shadow-soft:
-    0 10px 30px -18px oklch(0.18 0.05 220 / 0.35),
-    inset 0 1px 0 var(--glass-highlight);
+    0 12px 30px -18px rgba(20, 50, 65, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
 
   --shadow-lift:
-    0 20px 45px -20px oklch(0.35 0.12 210 / 0.5),
-    0 8px 22px -14px oklch(0.68 0.18 55 / 0.4),
-    inset 0 1px 0 var(--glass-highlight);
+    0 20px 45px -22px rgba(20, 50, 65, 0.30),
+    0 8px 22px -14px rgba(0, 150, 210, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
 }
 
 
 /* =========================================================
    DARK THEME
-   Ambient Gradient / Premium Dark UI
    ========================================================= */
 
 .dark {
-  /* Main background */
   --background: oklch(0.095 0.025 230);
   --foreground: oklch(0.965 0.005 250);
 
-  /* Dark solid-ish surfaces */
   --card: oklch(0.145 0.032 225 / 0.88);
   --card-foreground: oklch(0.965 0.005 250);
 
@@ -139,7 +123,6 @@
   --popover: oklch(0.125 0.03 230 / 0.97);
   --popover-foreground: oklch(0.965 0.005 250);
 
-  /* Cyan primary */
   --primary: oklch(0.76 0.16 200);
   --primary-foreground: oklch(0.10 0.02 230);
 
@@ -149,13 +132,11 @@
   --muted: oklch(1 0 0 / 0.055);
   --muted-foreground: oklch(0.69 0.015 250);
 
-  /* Purple accent */
   --accent: oklch(0.72 0.18 275);
   --accent-foreground: oklch(0.98 0 0);
 
   --accent-soft: oklch(0.36 0.12 270 / 0.24);
 
-  /* Warm orange — ambient only */
   --warm: oklch(0.72 0.18 55);
   --warm-soft: oklch(0.45 0.14 55 / 0.18);
 
@@ -167,7 +148,6 @@
   --destructive: oklch(0.65 0.18 22);
   --destructive-foreground: oklch(0.98 0 0);
 
-  /* Very subtle borders */
   --border: oklch(0.8 0.04 220 / 0.13);
   --border-strong: oklch(0.8 0.06 220 / 0.23);
 
@@ -175,13 +155,12 @@
 
   --ring: oklch(0.75 0.15 200);
 
-  /* Soft dark shadows */
   --shadow-soft:
-    0 14px 38px -22px oklch(0 0 0 / 0.85);
+    0 14px 38px -22px rgba(0, 0, 0, 0.85);
 
   --shadow-lift:
-    0 26px 65px -28px oklch(0 0 0 / 0.9),
-    0 0 40px -28px oklch(0.72 0.18 200 / 0.32);
+    0 26px 65px -28px rgba(0, 0, 0, 0.90),
+    0 0 40px -28px rgba(0, 210, 255, 0.32);
 }
 
 
@@ -232,39 +211,33 @@
 
     background:
       radial-gradient(
-        circle at 8% 18%,
-        rgba(0, 190, 255, 0.16),
+        circle at 5% 15%,
+        rgba(0, 180, 230, 0.11),
         transparent 31%
       ),
       radial-gradient(
-        circle at 90% 25%,
-        rgba(95, 55, 255, 0.13),
+        circle at 92% 25%,
+        rgba(90, 70, 240, 0.08),
         transparent 30%
       ),
       radial-gradient(
         circle at 78% 82%,
-        rgba(0, 210, 200, 0.11),
-        transparent 31%
+        rgba(0, 190, 190, 0.07),
+        transparent 30%
       ),
       radial-gradient(
-        circle at 12% 88%,
-        rgba(255, 95, 20, 0.085),
-        transparent 28%
+        circle at 10% 90%,
+        rgba(255, 100, 25, 0.055),
+        transparent 27%
       );
 
-    filter: blur(75px);
+    filter: blur(80px);
 
     transform: scale(1.12);
-
-    transition:
-      opacity 300ms ease,
-      filter 300ms ease;
   }
 
 
-  /* =======================================================
-     DARK AMBIENT BACKGROUND
-     ======================================================= */
+  /* Stronger ambient colors ONLY in dark mode */
 
   .dark body::before {
     background:
@@ -290,8 +263,6 @@
       );
 
     filter: blur(90px);
-
-    opacity: 0.95;
   }
 
 
@@ -309,16 +280,13 @@
 
     pointer-events: none;
 
+    /* IMPORTANT:
+       Light mode gets NO dark overlay */
     background:
       radial-gradient(
         circle at 50% 0%,
-        rgba(20, 120, 255, 0.055),
-        transparent 38%
-      ),
-      linear-gradient(
-        180deg,
-        rgba(2, 10, 16, 0.04),
-        rgba(2, 10, 16, 0.25)
+        rgba(20, 150, 220, 0.035),
+        transparent 40%
       );
   }
 
@@ -338,19 +306,11 @@
   }
 
 
-  /* =======================================================
-     FOCUS
-     ======================================================= */
-
   :focus-visible {
     outline: 2px solid var(--color-ring);
     outline-offset: 2px;
   }
 
-
-  /* =======================================================
-     CARD BACKDROP
-     ======================================================= */
 
   .bg-card,
   .bg-card\/50,
@@ -367,11 +327,8 @@
 
 @utility container-page {
   width: 100%;
-
   margin-inline: auto;
-
   max-width: 80rem;
-
   padding-inline: 1rem;
 
   @media (min-width: 768px) {
@@ -395,67 +352,58 @@
 
 /* =========================================================
    SURFACE CARD
-   Main cards — NOT heavy glassmorphism
    ========================================================= */
 
 @utility surface-card {
-  background: rgba(7, 24, 33, 0.84);
+  background: var(--color-card);
 
-  border: 1px solid rgba(100, 190, 220, 0.12);
+  border: 1px solid var(--color-border);
 
   border-radius: var(--radius);
 
-  box-shadow:
-    0 14px 38px rgba(0, 0, 0, 0.30),
-    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+  box-shadow: var(--shadow-soft);
 
   backdrop-filter: blur(8px) saturate(115%);
 
   transition:
-    border-color 180ms ease,
     background 180ms ease,
+    border-color 180ms ease,
     box-shadow 180ms ease,
     transform 180ms ease;
-
-  .dark & {
-    background: rgba(7, 24, 33, 0.84);
-  }
 }
 
 
 /* =========================================================
    GLASS PANEL
-   Used for larger sections / containers
    ========================================================= */
 
 @utility glass-panel {
-  background: rgba(6, 22, 31, 0.72);
+  background: var(--color-card);
 
-  border: 1px solid rgba(100, 190, 220, 0.11);
+  border: 1px solid var(--color-border);
 
-  box-shadow:
-    0 16px 45px rgba(0, 0, 0, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+  box-shadow: var(--shadow-soft);
 
-  backdrop-filter: blur(10px) saturate(115%);
+  backdrop-filter: blur(9px) saturate(115%);
 }
 
 
 /* =========================================================
    GLASS CONTROL
-   Search / Inputs / Small UI controls
    ========================================================= */
 
 @utility glass-control {
-  background: rgba(8, 27, 37, 0.72);
+  background: color-mix(
+    in oklab,
+    var(--color-card) 88%,
+    transparent
+  );
 
-  border: 1px solid rgba(120, 200, 220, 0.13);
+  border: 1px solid var(--color-border);
 
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.035),
-    0 8px 25px rgba(0, 0, 0, 0.22);
+  box-shadow: var(--shadow-soft);
 
-  backdrop-filter: blur(10px) saturate(115%);
+  backdrop-filter: blur(8px) saturate(115%);
 
   transition:
     background 180ms ease,
@@ -463,28 +411,25 @@
     box-shadow 180ms ease;
 
   &:hover {
-    background: rgba(10, 34, 45, 0.82);
-
-    border-color: rgba(0, 210, 255, 0.24);
-
-    box-shadow:
-      inset 0 1px 0 rgba(255, 255, 255, 0.04),
-      0 10px 30px rgba(0, 0, 0, 0.28);
+    border-color: var(--color-border-strong);
   }
 
   &:focus-within {
-    border-color: rgba(0, 210, 255, 0.35);
+    border-color: var(--color-ring);
 
     box-shadow:
-      0 0 0 2px rgba(0, 210, 255, 0.06),
-      0 10px 30px rgba(0, 0, 0, 0.28);
+      0 0 0 2px color-mix(
+        in oklab,
+        var(--color-ring) 12%,
+        transparent
+      ),
+      var(--shadow-soft);
   }
 }
 
 
 /* =========================================================
    AMBIENT SECTION GLOWS
-   Add these classes to sections when needed
    ========================================================= */
 
 @utility ambient-cyan {
@@ -501,7 +446,7 @@
     left: 5%;
     top: 15%;
 
-    background: rgba(0, 190, 255, 0.09);
+    background: rgba(0, 190, 255, 0.08);
 
     filter: blur(100px);
 
@@ -526,7 +471,7 @@
     right: 5%;
     top: 10%;
 
-    background: rgba(110, 60, 255, 0.09);
+    background: rgba(110, 60, 255, 0.07);
 
     filter: blur(110px);
 
@@ -551,7 +496,7 @@
     left: 5%;
     bottom: 5%;
 
-    background: rgba(255, 90, 20, 0.075);
+    background: rgba(255, 90, 20, 0.06);
 
     filter: blur(110px);
 
@@ -563,14 +508,13 @@
 
 
 /* =========================================================
-   CYAN GLOW UTILITY
-   For important buttons / active elements
+   CYAN GLOW
    ========================================================= */
 
 @utility cyan-glow {
   box-shadow:
     0 0 20px rgba(0, 210, 255, 0.14),
-    0 8px 25px rgba(0, 0, 0, 0.25);
+    0 8px 25px rgba(0, 0, 0, 0.15);
 
   transition:
     box-shadow 180ms ease,
@@ -579,10 +523,23 @@
   &:hover {
     box-shadow:
       0 0 28px rgba(0, 210, 255, 0.23),
-      0 10px 30px rgba(0, 0, 0, 0.30);
+      0 10px 30px rgba(0, 0, 0, 0.20);
 
     transform: translateY(-1px);
   }
+}
+
+
+/* =========================================================
+   IMAGE SAFETY
+   ========================================================= */
+
+img {
+  max-width: 100%;
+}
+
+.dark img {
+  /* no forced brightness/filter */
 }
 
 
@@ -597,6 +554,10 @@
     animation-duration: 0.01ms !important;
 
     transition-duration: 0.01ms !important;
+
+    scroll-behavior: auto !important;
+  }
+}
 
     scroll-behavior: auto !important;
   }
