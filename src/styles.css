@@ -155,7 +155,7 @@
   .bg-card\/50,
   .bg-card\/70,
   .bg-card\/90 {
-    backdrop-filter: blur(14px) saturate(145%);
+    backdrop-filter: blur(13px) saturate(145%);
   }
 }
 
@@ -181,21 +181,21 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(16px) saturate(145%);
+  backdrop-filter: blur(14px) saturate(145%);
 }
 
 @utility glass-panel {
   background-color: var(--color-card);
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(16px) saturate(150%);
+  backdrop-filter: blur(14px) saturate(150%);
 }
 
 @utility glass-control {
   background-color: color-mix(in oklab, var(--color-card) 78%, transparent);
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(12px) saturate(145%);
+  backdrop-filter: blur(11px) saturate(145%);
 }
 
 @media (prefers-reduced-motion: reduce) {
