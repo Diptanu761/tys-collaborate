@@ -10,102 +10,184 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --radius-2xl: calc(var(--radius) + 8px);
+
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
+
   --color-elevated: var(--elevated);
+
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
+
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
+
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
+
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent-soft: var(--accent-soft);
+
   --color-glass-highlight: var(--glass-highlight);
+
   --color-warm: var(--warm);
   --color-warm-soft: var(--warm-soft);
+
   --color-success: var(--success);
   --color-warning: var(--warning);
+
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
+
   --color-border: var(--border);
   --color-border-strong: var(--border-strong);
+
   --color-input: var(--input);
   --color-ring: var(--ring);
+
   --shadow-soft: var(--shadow-soft);
   --shadow-lift: var(--shadow-lift);
 }
 
+
+/* =========================================================
+   LIGHT THEME
+   ========================================================= */
+
 :root {
   --radius: 0.875rem;
+
   --background: oklch(0.965 0.018 205);
   --foreground: oklch(0.19 0.025 225);
+
   --card: oklch(0.9 0 0 / 0.52);
   --card-foreground: oklch(0.19 0.012 255);
+
   --elevated: oklch(0.88 0.012 205 / 0.61);
+
   --popover: oklch(0.9 0 0 / 0.74);
   --popover-foreground: oklch(0.19 0.012 255);
+
   --primary: oklch(0.57 0.14 208);
   --primary-foreground: oklch(0.99 0 0);
+
   --secondary: oklch(0.855 0.004 250 / 0.62);
   --secondary-foreground: oklch(0.25 0.012 255);
+
   --muted: oklch(0.9 0 0 / 0.34);
   --muted-foreground: oklch(0.43 0.03 225);
+
   --accent: oklch(0.65 0.14 205);
   --accent-foreground: oklch(0.14 0.025 225);
+
   --accent-soft: oklch(0.88 0.08 200 / 0.52);
+
   --warm: oklch(0.72 0.18 56);
   --warm-soft: oklch(0.9 0.08 63 / 0.5);
+
   --glass-highlight: oklch(1 0 0 / 0.82);
+
   --success: oklch(0.62 0.13 158);
   --warning: oklch(0.75 0.14 75);
+
   --destructive: oklch(0.58 0.2 22);
   --destructive-foreground: oklch(0.99 0 0);
+
   --border: oklch(0.9 0 0 / 0.45);
   --border-strong: oklch(0.9 0 0 / 0.70);
+
   --input: oklch(0.9 0 0 / 0.56);
+
   --ring: oklch(0.6 0.13 226);
-  --shadow-soft: 0 10px 30px -18px oklch(0.18 0.05 220 / 0.35), inset 0 1px 0 var(--glass-highlight);
-  --shadow-lift: 0 20px 45px -20px oklch(0.35 0.12 210 / 0.5), 0 8px 22px -14px oklch(0.68 0.18 55 / 0.4), inset 0 1px 0 var(--glass-highlight);
+
+  --shadow-soft:
+    0 10px 30px -18px oklch(0.18 0.05 220 / 0.35),
+    inset 0 1px 0 var(--glass-highlight);
+
+  --shadow-lift:
+    0 20px 45px -20px oklch(0.35 0.12 210 / 0.5),
+    0 8px 22px -14px oklch(0.68 0.18 55 / 0.4),
+    inset 0 1px 0 var(--glass-highlight);
 }
 
+
+/* =========================================================
+   DARK THEME
+   Ambient Gradient / Premium Dark UI
+   ========================================================= */
+
 .dark {
-  --background: oklch(0.14 0.025 235);
-  --foreground: oklch(0.955 0.003 250);
-  --card: oklch(0.32 0.035 230 / 0.52);
-  --card-foreground: oklch(0.955 0.003 250);
-  --elevated: oklch(0.3 0.035 230 / 0.63);
-  --popover: oklch(0.29 0.03 230 / 0.81);
-  --popover-foreground: oklch(0.955 0.003 250);
-  --primary: oklch(0.72 0.15 202);
-  --primary-foreground: oklch(0.14 0.025 230);
-  --secondary: oklch(0.355 0.01 255 / 0.62);
-  --secondary-foreground: oklch(0.95 0.003 250);
-  --muted: oklch(0.9 0 0 / 0.08);
-  --muted-foreground: oklch(0.7 0.012 255);
-  --accent: oklch(0.76 0.15 199);
-  --accent-foreground: oklch(0.17 0.01 255);
-  --accent-soft: oklch(0.38 0.1 205 / 0.48);
-  --warm: oklch(0.78 0.18 57);
-  --warm-soft: oklch(0.42 0.13 55 / 0.45);
-  --glass-highlight: oklch(1 0 0 / 0.2);
+  /* Main background */
+  --background: oklch(0.095 0.025 230);
+  --foreground: oklch(0.965 0.005 250);
+
+  /* Dark solid-ish surfaces */
+  --card: oklch(0.145 0.032 225 / 0.88);
+  --card-foreground: oklch(0.965 0.005 250);
+
+  --elevated: oklch(0.17 0.035 225 / 0.94);
+
+  --popover: oklch(0.125 0.03 230 / 0.97);
+  --popover-foreground: oklch(0.965 0.005 250);
+
+  /* Cyan primary */
+  --primary: oklch(0.76 0.16 200);
+  --primary-foreground: oklch(0.10 0.02 230);
+
+  --secondary: oklch(0.17 0.025 235);
+  --secondary-foreground: oklch(0.94 0.005 250);
+
+  --muted: oklch(1 0 0 / 0.055);
+  --muted-foreground: oklch(0.69 0.015 250);
+
+  /* Purple accent */
+  --accent: oklch(0.72 0.18 275);
+  --accent-foreground: oklch(0.98 0 0);
+
+  --accent-soft: oklch(0.36 0.12 270 / 0.24);
+
+  /* Warm orange — ambient only */
+  --warm: oklch(0.72 0.18 55);
+  --warm-soft: oklch(0.45 0.14 55 / 0.18);
+
+  --glass-highlight: oklch(1 0 0 / 0.065);
+
   --success: oklch(0.72 0.14 158);
   --warning: oklch(0.8 0.14 75);
+
   --destructive: oklch(0.65 0.18 22);
-  --destructive-foreground: oklch(0.15 0.01 255);
-  --border: oklch(0.9 0 0 / 13.5%);
-  --border-strong: oklch(0.9 0 0 / 25.2%);
-  --input: oklch(0.9 0 0 / 16.2%);
-  --ring: oklch(0.72 0.13 218);
-  --shadow-soft: 0 12px 32px -18px oklch(0 0 0 / 0.7), inset 0 1px 0 var(--glass-highlight);
-  --shadow-lift: 0 24px 54px -22px oklch(0 0 0 / 0.8), 0 8px 26px -16px oklch(0.75 0.18 57 / 0.42), inset 0 1px 0 var(--glass-highlight);
+  --destructive-foreground: oklch(0.98 0 0);
+
+  /* Very subtle borders */
+  --border: oklch(0.8 0.04 220 / 0.13);
+  --border-strong: oklch(0.8 0.06 220 / 0.23);
+
+  --input: oklch(1 0 0 / 0.075);
+
+  --ring: oklch(0.75 0.15 200);
+
+  /* Soft dark shadows */
+  --shadow-soft:
+    0 14px 38px -22px oklch(0 0 0 / 0.85);
+
+  --shadow-lift:
+    0 26px 65px -28px oklch(0 0 0 / 0.9),
+    0 0 40px -28px oklch(0.72 0.18 200 / 0.32);
 }
+
+
+/* =========================================================
+   BASE
+   ========================================================= */
 
 @layer base {
   * {
@@ -119,91 +201,403 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+
     font-family: var(--font-sans);
+
     -webkit-font-smoothing: antialiased;
+
     overflow-x: hidden;
+
     isolation: isolate;
+
     transition:
       background-color 250ms ease,
       color 250ms ease;
   }
 
+
+  /* =======================================================
+     AMBIENT BACKGROUND
+     ======================================================= */
+
   body::before {
     content: "";
+
     position: fixed;
-    z-index: -1;
-    inset: -3rem;
+    inset: 0;
+
+    z-index: -3;
+
     pointer-events: none;
-    background-image: url("./assets/glass-gradient-texture.jpg");
-    background-size: cover;
-    background-position: center;
-    filter: blur(18px) saturate(115%) brightness(1.65);
-    transform: scale(1.04);
-    transition: filter 250ms ease;
+
+    background:
+      radial-gradient(
+        circle at 8% 18%,
+        rgba(0, 190, 255, 0.16),
+        transparent 31%
+      ),
+      radial-gradient(
+        circle at 90% 25%,
+        rgba(95, 55, 255, 0.13),
+        transparent 30%
+      ),
+      radial-gradient(
+        circle at 78% 82%,
+        rgba(0, 210, 200, 0.11),
+        transparent 31%
+      ),
+      radial-gradient(
+        circle at 12% 88%,
+        rgba(255, 95, 20, 0.085),
+        transparent 28%
+      );
+
+    filter: blur(75px);
+
+    transform: scale(1.12);
+
+    transition:
+      opacity 300ms ease,
+      filter 300ms ease;
   }
 
+
+  /* =======================================================
+     DARK AMBIENT BACKGROUND
+     ======================================================= */
+
   .dark body::before {
-    filter: blur(18px) saturate(120%) brightness(0.62);
+    background:
+      radial-gradient(
+        circle at 5% 15%,
+        rgba(0, 200, 255, 0.20),
+        transparent 30%
+      ),
+      radial-gradient(
+        circle at 92% 28%,
+        rgba(105, 55, 255, 0.17),
+        transparent 29%
+      ),
+      radial-gradient(
+        circle at 78% 85%,
+        rgba(0, 220, 210, 0.15),
+        transparent 30%
+      ),
+      radial-gradient(
+        circle at 8% 90%,
+        rgba(255, 90, 15, 0.12),
+        transparent 27%
+      );
+
+    filter: blur(90px);
+
+    opacity: 0.95;
   }
+
+
+  /* =======================================================
+     SECOND BACKGROUND LAYER
+     ======================================================= */
+
+  body::after {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    z-index: -2;
+
+    pointer-events: none;
+
+    background:
+      radial-gradient(
+        circle at 50% 0%,
+        rgba(20, 120, 255, 0.055),
+        transparent 38%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(2, 10, 16, 0.04),
+        rgba(2, 10, 16, 0.25)
+      );
+  }
+
+
+  .dark body::after {
+    background:
+      radial-gradient(
+        circle at 50% 0%,
+        rgba(20, 130, 255, 0.065),
+        transparent 40%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(2, 10, 16, 0.02),
+        rgba(2, 10, 16, 0.30)
+      );
+  }
+
+
+  /* =======================================================
+     FOCUS
+     ======================================================= */
 
   :focus-visible {
     outline: 2px solid var(--color-ring);
     outline-offset: 2px;
   }
 
+
+  /* =======================================================
+     CARD BACKDROP
+     ======================================================= */
+
   .bg-card,
   .bg-card\/50,
   .bg-card\/70,
   .bg-card\/90 {
-    backdrop-filter: blur(13px) saturate(145%);
+    backdrop-filter: blur(8px) saturate(115%);
   }
 }
 
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
 @utility container-page {
   width: 100%;
+
   margin-inline: auto;
+
   max-width: 80rem;
+
   padding-inline: 1rem;
+
   @media (min-width: 768px) {
     padding-inline: 2rem;
   }
 }
 
+
+/* =========================================================
+   NO SCROLLBAR
+   ========================================================= */
+
 @utility no-scrollbar {
   scrollbar-width: none;
+
   &::-webkit-scrollbar {
     display: none;
   }
 }
 
+
+/* =========================================================
+   SURFACE CARD
+   Main cards — NOT heavy glassmorphism
+   ========================================================= */
+
 @utility surface-card {
-  background-color: var(--color-card);
-  border: 1px solid var(--color-border);
+  background: rgba(7, 24, 33, 0.84);
+
+  border: 1px solid rgba(100, 190, 220, 0.12);
+
   border-radius: var(--radius);
-  box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(14px) saturate(145%);
+
+  box-shadow:
+    0 14px 38px rgba(0, 0, 0, 0.30),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+
+  backdrop-filter: blur(8px) saturate(115%);
+
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+
+  .dark & {
+    background: rgba(7, 24, 33, 0.84);
+  }
 }
+
+
+/* =========================================================
+   GLASS PANEL
+   Used for larger sections / containers
+   ========================================================= */
 
 @utility glass-panel {
-  background-color: var(--color-card);
-  border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(14px) saturate(150%);
+  background: rgba(6, 22, 31, 0.72);
+
+  border: 1px solid rgba(100, 190, 220, 0.11);
+
+  box-shadow:
+    0 16px 45px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035);
+
+  backdrop-filter: blur(10px) saturate(115%);
 }
 
+
+/* =========================================================
+   GLASS CONTROL
+   Search / Inputs / Small UI controls
+   ========================================================= */
+
 @utility glass-control {
-  background-color: color-mix(in oklab, var(--color-card) 78%, transparent);
-  border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(11px) saturate(145%);
+  background: rgba(8, 27, 37, 0.72);
+
+  border: 1px solid rgba(120, 200, 220, 0.13);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.035),
+    0 8px 25px rgba(0, 0, 0, 0.22);
+
+  backdrop-filter: blur(10px) saturate(115%);
+
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+
+  &:hover {
+    background: rgba(10, 34, 45, 0.82);
+
+    border-color: rgba(0, 210, 255, 0.24);
+
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.04),
+      0 10px 30px rgba(0, 0, 0, 0.28);
+  }
+
+  &:focus-within {
+    border-color: rgba(0, 210, 255, 0.35);
+
+    box-shadow:
+      0 0 0 2px rgba(0, 210, 255, 0.06),
+      0 10px 30px rgba(0, 0, 0, 0.28);
+  }
 }
+
+
+/* =========================================================
+   AMBIENT SECTION GLOWS
+   Add these classes to sections when needed
+   ========================================================= */
+
+@utility ambient-cyan {
+  position: relative;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 260px;
+
+    left: 5%;
+    top: 15%;
+
+    background: rgba(0, 190, 255, 0.09);
+
+    filter: blur(100px);
+
+    pointer-events: none;
+
+    z-index: -1;
+  }
+}
+
+
+@utility ambient-purple {
+  position: relative;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+    height: 280px;
+
+    right: 5%;
+    top: 10%;
+
+    background: rgba(110, 60, 255, 0.09);
+
+    filter: blur(110px);
+
+    pointer-events: none;
+
+    z-index: -1;
+  }
+}
+
+
+@utility ambient-orange {
+  position: relative;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+    height: 250px;
+
+    left: 5%;
+    bottom: 5%;
+
+    background: rgba(255, 90, 20, 0.075);
+
+    filter: blur(110px);
+
+    pointer-events: none;
+
+    z-index: -1;
+  }
+}
+
+
+/* =========================================================
+   CYAN GLOW UTILITY
+   For important buttons / active elements
+   ========================================================= */
+
+@utility cyan-glow {
+  box-shadow:
+    0 0 20px rgba(0, 210, 255, 0.14),
+    0 8px 25px rgba(0, 0, 0, 0.25);
+
+  transition:
+    box-shadow 180ms ease,
+    transform 180ms ease;
+
+  &:hover {
+    box-shadow:
+      0 0 28px rgba(0, 210, 255, 0.23),
+      0 10px 30px rgba(0, 0, 0, 0.30);
+
+    transform: translateY(-1px);
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
+
     transition-duration: 0.01ms !important;
+
     scroll-behavior: auto !important;
   }
 }
