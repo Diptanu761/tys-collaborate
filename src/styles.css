@@ -137,13 +137,13 @@
     background-image: url("./assets/glass-gradient-texture.jpg");
     background-size: cover;
     background-position: center;
-    filter: blur(28px) saturate(115%) brightness(1.65);
+    filter: blur(20px) saturate(115%) brightness(1.65);
     transform: scale(1.04);
     transition: filter 250ms ease;
   }
 
   .dark body::before {
-    filter: blur(28px) saturate(120%) brightness(0.62);
+    filter: blur(20px) saturate(120%) brightness(0.62);
   }
 
   :focus-visible {
@@ -155,7 +155,7 @@
   .bg-card\/50,
   .bg-card\/70,
   .bg-card\/90 {
-    backdrop-filter: blur(20px) saturate(145%);
+    backdrop-filter: blur(14px) saturate(145%);
   }
 }
 
@@ -181,21 +181,21 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(22px) saturate(145%);
+  backdrop-filter: blur(16px) saturate(145%);
 }
 
 @utility glass-panel {
   background-color: var(--color-card);
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(22px) saturate(150%);
+  backdrop-filter: blur(16px) saturate(150%);
 }
 
 @utility glass-control {
   background-color: color-mix(in oklab, var(--color-card) 78%, transparent);
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(18px) saturate(145%);
+  backdrop-filter: blur(12px) saturate(145%);
 }
 
 @media (prefers-reduced-motion: reduce) {
