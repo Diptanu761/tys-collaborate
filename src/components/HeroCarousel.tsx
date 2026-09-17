@@ -24,7 +24,7 @@ export function HeroCarousel() {
     <section
       aria-roledescription="carousel"
       aria-label="Promotions"
-      className="relative overflow-hidden rounded-xl border border-border bg-card shadow-soft"
+      className="glass-panel relative overflow-hidden rounded-2xl p-1 shadow-lift"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocus={() => setPaused(true)}

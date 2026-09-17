@@ -10,9 +10,9 @@ const items = [
 
 export function TrustSection() {
   return (
-    <section aria-label="Why shop with TYS Global" className="grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:grid-cols-5">
+    <section aria-label="Why shop with TYS Global" className="glass-panel grid overflow-hidden rounded-xl sm:grid-cols-2 lg:grid-cols-5">
       {items.map(({ icon: Icon, title, text }) => (
-        <div key={title} className="bg-card p-5">
+        <div key={title} className="border-b border-border bg-card/35 p-5 last:border-b-0 sm:border-r lg:border-b-0">
           <Icon className="h-4.5 w-4.5 text-accent" aria-hidden />
           <h3 className="mt-3 text-sm font-semibold">{title}</h3>
           <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{text}</p>

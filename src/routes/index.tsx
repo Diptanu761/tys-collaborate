@@ -58,7 +58,7 @@ function HomePage() {
               key={category}
               to="/top-up"
               search={{ category, region: "All regions", q: "" }}
-              className="group flex items-center justify-between rounded-lg border border-border bg-card p-5 shadow-soft transition-all hover:-translate-y-0.5 hover:border-border-strong hover:shadow-lift"
+              className="glass-panel group flex items-center justify-between rounded-xl p-5 transition-all duration-300 hover:-translate-y-1 hover:border-border-strong hover:shadow-lift"
             >
               <span className="text-sm font-medium">{category}</span>
               <ArrowRight className="h-4 w-4 text-muted-foreground transition-colors group-hover:text-foreground" aria-hidden />
@@ -84,7 +84,7 @@ function HomePage() {
       </section>
 
       <section className="container-page">
-        <div className="relative overflow-hidden rounded-xl border border-border bg-card p-8 text-center shadow-soft md:p-14">
+        <div className="glass-panel relative overflow-hidden rounded-2xl p-8 text-center md:p-14">
           <div className="relative z-10 mx-auto max-w-2xl">
             <h2 className="text-2xl font-semibold tracking-tight md:text-3xl">Ready to top up?</h2>
             <p className="mt-3 text-sm text-muted-foreground">

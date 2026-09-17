@@ -20,11 +20,11 @@ export function Navbar() {
   const [lang, setLang] = useState("EN");
 
   const iconBtn =
-    "grid h-9 w-9 place-items-center rounded-md border border-border bg-card text-muted-foreground transition-colors hover:border-border-strong hover:text-foreground";
+    "glass-control grid h-9 w-9 place-items-center rounded-lg text-muted-foreground transition-all hover:-translate-y-0.5 hover:border-border-strong hover:text-foreground hover:shadow-lift";
 
   return (
     <>
-      <header className="sticky top-0 z-40 border-b border-border bg-background/80 backdrop-blur-xl">
+      <header className="sticky top-0 z-40 border-b border-border bg-card/70 shadow-soft backdrop-blur-2xl">
         <div className="container-page flex h-16 items-center justify-between gap-4">
           <Link to="/" className="flex shrink-0 items-center gap-2.5" onClick={() => setMenuOpen(false)}>
             <span
@@ -55,7 +55,7 @@ export function Navbar() {
           <div className="flex items-center gap-2">
             <button
               onClick={() => setSearchOpen(true)}
-              className="hidden h-9 w-56 items-center gap-2 rounded-md border border-border bg-card px-3 text-left text-sm text-muted-foreground transition-colors hover:border-border-strong md:flex"
+              className="glass-control hidden h-9 w-56 items-center gap-2 rounded-lg px-3 text-left text-sm text-muted-foreground transition-all hover:-translate-y-0.5 hover:border-border-strong md:flex"
             >
               <Search className="h-4 w-4" aria-hidden />
               Search games
@@ -67,7 +67,7 @@ export function Navbar() {
             <button
               onClick={() => setLang((l) => (l === "EN" ? "HI" : l === "HI" ? "ID" : "EN"))}
               aria-label="Change language"
-              className="hidden h-9 items-center gap-1.5 rounded-md border border-border bg-card px-2.5 text-xs font-medium text-muted-foreground transition-colors hover:text-foreground sm:flex"
+              className="glass-control hidden h-9 items-center gap-1.5 rounded-lg px-2.5 text-xs font-medium text-muted-foreground transition-all hover:-translate-y-0.5 hover:text-foreground sm:flex"
             >
               <Globe className="h-4 w-4" aria-hidden />
               {lang}
@@ -85,7 +85,7 @@ export function Navbar() {
             <Link
               to="/login"
               aria-label="Account"
-              className="grid h-9 w-9 place-items-center rounded-md border border-border bg-card text-muted-foreground transition-colors hover:text-foreground sm:hidden"
+               className="glass-control grid h-9 w-9 place-items-center rounded-lg text-muted-foreground transition-all hover:-translate-y-0.5 hover:text-foreground sm:hidden"
             >
               <User className="h-4 w-4" />
             </Link>
@@ -108,7 +108,7 @@ export function Navbar() {
         </div>
 
         {menuOpen && (
-          <nav aria-label="Mobile" className="border-t border-border bg-background lg:hidden">
+          <nav aria-label="Mobile" className="border-t border-border bg-card/90 backdrop-blur-2xl lg:hidden">
             <div className="container-page flex flex-col py-2">
               {links.map((l) => (
                 <Link
