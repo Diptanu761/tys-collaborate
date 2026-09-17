@@ -356,15 +356,10 @@
 
 @utility surface-card {
   background: var(--color-card);
-
   border: 1px solid var(--color-border);
-
   border-radius: var(--radius);
-
   box-shadow: var(--shadow-soft);
-
   backdrop-filter: blur(8px) saturate(115%);
-
   transition:
     background 180ms ease,
     border-color 180ms ease,
@@ -398,35 +393,22 @@
     var(--color-card) 88%,
     transparent
   );
-
   border: 1px solid var(--color-border);
-
   box-shadow: var(--shadow-soft);
-
   backdrop-filter: blur(8px) saturate(115%);
-
   transition:
     background 180ms ease,
     border-color 180ms ease,
     box-shadow 180ms ease;
-
-  &:hover {
-    border-color: var(--color-border-strong);
-  }
-
-  &:focus-within {
-    border-color: var(--color-ring);
-
-    box-shadow:
-      0 0 0 2px color-mix(
-        in oklab,
-        var(--color-ring) 12%,
-        transparent
-      ),
-      var(--shadow-soft);
-  }
 }
 
+.glass-control:hover {
+  border-color: var(--color-border-strong);
+}
+
+.glass-control:focus-within {
+  border-color: var(--color-ring);
+}
 
 /* =========================================================
    AMBIENT SECTION GLOWS
