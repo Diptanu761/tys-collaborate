@@ -135,6 +135,13 @@
     outline: 2px solid var(--color-ring);
     outline-offset: 2px;
   }
+
+  .bg-card,
+  .bg-card\/50,
+  .bg-card\/70,
+  .bg-card\/90 {
+    backdrop-filter: blur(20px) saturate(145%);
+  }
 }
 
 @utility container-page {

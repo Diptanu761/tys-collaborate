@@ -29,8 +29,7 @@ export function Navbar() {
           <Link to="/" className="flex shrink-0 items-center gap-2.5" onClick={() => setMenuOpen(false)}>
             <span
               aria-hidden
-              className="grid h-8 w-8 place-items-center rounded-md text-[0.7rem] font-bold text-white"
-              style={{ backgroundImage: "linear-gradient(140deg,#1f6feb,#0ea5b7)" }}
+              className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-accent to-warm text-[0.7rem] font-bold text-primary-foreground shadow-lift"
             >
               TG
             </span>
