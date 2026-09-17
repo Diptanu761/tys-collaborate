@@ -7,10 +7,10 @@ type Size = "sm" | "md" | "lg";
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-primary text-primary-foreground hover:opacity-90 disabled:opacity-40 disabled:hover:opacity-40",
+    "bg-primary text-primary-foreground shadow-lift hover:brightness-110 disabled:opacity-40 disabled:hover:brightness-100",
   accent:
     "bg-accent text-accent-foreground hover:brightness-110 disabled:opacity-40 disabled:hover:brightness-100",
-  outline: "border border-border-strong bg-card text-foreground hover:bg-muted",
+  outline: "glass-control text-foreground hover:bg-muted",
   ghost: "text-muted-foreground hover:text-foreground hover:bg-muted",
 };
 
@@ -31,7 +31,7 @@ export function Button({
   return (
     <Comp
       className={cn(
-        "inline-flex items-center justify-center gap-2 rounded-md font-medium transition-[background,opacity,transform,filter] duration-200 active:scale-[0.98] disabled:cursor-not-allowed",
+        "inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-[background,opacity,transform,filter,box-shadow] duration-200 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] disabled:cursor-not-allowed",
         variants[variant],
         sizes[size],
         className,

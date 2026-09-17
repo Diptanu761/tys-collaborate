@@ -25,7 +25,7 @@ export function ReviewCard({ review }: { review: Review }) {
     .map((n) => n[0])
     .join("");
   return (
-    <article className="rounded-lg border border-border bg-card p-5 shadow-soft">
+    <article className="glass-panel rounded-xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
       <div className="flex items-center gap-3">
         <span className="grid h-9 w-9 place-items-center rounded-full bg-muted text-xs font-semibold">
           {initials}

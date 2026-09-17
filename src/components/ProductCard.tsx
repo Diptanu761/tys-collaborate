@@ -10,7 +10,7 @@ export function ProductCard({ product, wide = false }: { product: Product; wide?
       to="/product/$slug"
       params={{ slug: product.slug }}
       className={cn(
-        "group flex gap-2.5 rounded-lg border border-border bg-card p-2.5 shadow-soft transition-all duration-200 hover:-translate-y-0.5 hover:border-border-strong hover:shadow-lift",
+        "glass-panel group flex gap-2.5 rounded-xl p-2.5 transition-all duration-300 hover:-translate-y-1 hover:border-border-strong hover:shadow-lift",
         wide ? "min-w-[260px] flex-row items-center" : "flex-col",
       )}
     >
@@ -18,7 +18,7 @@ export function ProductCard({ product, wide = false }: { product: Product; wide?
         {...product.art}
         alt={`${product.name} artwork`}
         size={wide ? "md" : "lg"}
-        className={cn(wide ? "h-16 w-16 shrink-0" : "aspect-[16/10] w-full")}
+         className={cn("bg-elevated shadow-soft", wide ? "h-16 w-16 shrink-0" : "aspect-[16/10] w-full")}
       />
       <div className="min-w-0 flex-1">
         <h3 className="truncate text-sm font-semibold tracking-tight">{product.name}</h3>

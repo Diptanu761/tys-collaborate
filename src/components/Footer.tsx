@@ -11,14 +11,13 @@ const company: { label: string; to: "/about" | "/how-it-works" | "/contact" | "/
 
 export function Footer() {
   return (
-    <footer className="mt-20 border-t border-border bg-elevated">
+    <footer className="mt-20 border-t border-border bg-elevated/75 backdrop-blur-2xl">
       <div className="container-page grid gap-10 py-14 md:grid-cols-4">
         <div>
           <div className="flex items-center gap-2.5">
             <span
               aria-hidden
-              className="grid h-8 w-8 place-items-center rounded-md text-[0.7rem] font-bold text-white"
-              style={{ backgroundImage: "linear-gradient(140deg,#1f6feb,#0ea5b7)" }}
+              className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-to-br from-accent to-warm text-[0.7rem] font-bold text-primary-foreground shadow-lift"
             >
               TG
             </span>
@@ -31,7 +30,7 @@ export function Footer() {
             {[Send, Instagram, Twitter, MessageCircle].map((Icon, i) => (
               <span
                 key={i}
-                className="grid h-9 w-9 place-items-center rounded-md border border-border bg-card text-muted-foreground"
+                 className="glass-control grid h-9 w-9 place-items-center rounded-lg text-muted-foreground"
               >
                 <Icon className="h-4 w-4" aria-hidden />
               </span>
