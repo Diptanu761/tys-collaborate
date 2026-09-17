@@ -122,13 +122,28 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
-    background-image: linear-gradient(var(--background), color-mix(in oklab, var(--background) 74%, transparent)), url("./assets/glass-arena-bg.jpg");
-    background-size: cover;
-    background-position: center top;
-    background-attachment: fixed;
+    isolation: isolate;
     transition:
       background-color 250ms ease,
       color 250ms ease;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    z-index: -1;
+    inset: -3rem;
+    pointer-events: none;
+    background-image: url("./assets/glass-gradient-texture.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(28px) saturate(115%) brightness(1.65);
+    transform: scale(1.04);
+    transition: filter 250ms ease;
+  }
+
+  .dark body::before {
+    filter: blur(28px) saturate(120%) brightness(0.62);
   }
 
   :focus-visible {
