@@ -3,19 +3,18 @@ import { createContext, useCallback, useContext, useEffect, useState, type React
 type Theme = "light" | "dark";
 
 const ThemeContext = createContext<{ theme: Theme; toggle: () => void }>({
-  theme: "light",
+  theme: "dark",
   toggle: () => {},
 });
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("light");
+  const [theme, setTheme] = useState<Theme>("dark");
 
   useEffect(() => {
-    let next: Theme = "light";
+    let next: Theme = "dark";
     try {
       const stored = window.localStorage.getItem("tys-theme");
       if (stored === "light" || stored === "dark") next = stored;
-      else if (window.matchMedia("(prefers-color-scheme: dark)").matches) next = "dark";
     } catch {
       /* ignore */
     }
